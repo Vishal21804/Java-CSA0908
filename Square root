@@ -1,0 +1,44 @@
+public class R192210513 {
+    public static int mySqrt(int x) {
+        if (x < 0) {
+            throw new IllegalArgumentException("Input must be a non-negative integer.");
+        }
+        if (x == 0) {
+            return 0; 
+        }
+        
+        int left = 0;
+        int right = x;
+        int result = 0;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            long midSquared = (long) mid * mid; 
+            
+            if (midSquared == x) {
+                return mid; 
+            } else if (midSquared < x) {
+                left = mid + 1; 
+                result = mid; 
+            } else {
+                right = mid - 1; 
+            }
+        }
+        
+        return result; 
+    }
+
+    public static void main(String[] args) {
+        int x1 = 4;
+        int x2 = 8;
+        int x3 = 16;
+        int x4 = 1;
+        int x5 = 0;
+        
+        System.out.println("Square root of " + x1 + " is: " + mySqrt(x1)); 
+        System.out.println("Square root of " + x2 + " is: " + mySqrt(x2)); 
+        System.out.println("Square root of " + x3 + " is: " + mySqrt(x3)); 
+        System.out.println("Square root of " + x4 + " is: " + mySqrt(x4)); 
+        System.out.println("Square root of " + x5 + " is: " + mySqrt(x5)); 
+    }
+}
