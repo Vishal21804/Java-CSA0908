@@ -1,0 +1,46 @@
+public class BinaryAddition {
+    public static String addBinary(String a, String b) {
+        StringBuilder result = new StringBuilder(); // To store the result in reverse order
+        int carry = 0; // To keep track of carry
+        int i = a.length() - 1; // Pointer for string a
+        int j = b.length() - 1; // Pointer for string b
+        
+        // Process both strings
+        while (i >= 0 || j >= 0 || carry != 0) {
+            int sum = carry;
+            
+            // Add the corresponding bit from a
+            if (i >= 0) {
+                sum += a.charAt(i) - '0'; // Convert char to int
+                i--;
+            }
+            
+            // Add the corresponding bit from b
+            if (j >= 0) {
+                sum += b.charAt(j) - '0'; // Convert char to int
+                j--;
+            }
+            
+            // Calculate result bit and update carry
+            result.append(sum % 2); // Append the current bit
+            carry = sum / 2; // Update carry
+        }
+        
+        // The result is in reverse order, so reverse it
+        return result.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        String a1 = "1010";
+        String b1 = "1011";
+        String a2 = "0";
+        String b2 = "0";
+        String a3 = "1";
+        String b3 = "1";
+        
+        System.out.println("Sum of " + a1 + " and " + b1 + " is: " + addBinary(a1, b1)); // Output: 10101
+        System.out.println("Sum of " + a2 + " and " + b2 + " is: " + addBinary(a2, b2)); // Output: 0
+        System.out.println("Sum of " + a3 + " and " + b3 + " is: " + addBinary(a3, b3)); // Output: 10
+    }
+}
