@@ -1,0 +1,24 @@
+public class R192210513 {
+    public int titleToNumber(String columnTitle) {
+        int result = 0;
+        int length = columnTitle.length();
+
+        for (int i = 0; i < length; i++) {
+            char ch = columnTitle.charAt(i);
+            int value = ch - 'A' + 1; 
+            result = result * 26 + value; 
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        R192210513 converter = new R192210513();
+        
+        // Test cases
+        String[] testTitles = {"A", "B", "C", "Z", "AA", "AB", "AZ", "BA", "ZY", "ZZ"};
+        for (String title : testTitles) {
+            System.out.println("Column title " + title + " -> Number: " + converter.titleToNumber(title));
+        }
+    }
+}
