@@ -1,0 +1,36 @@
+public class R192210513 {
+
+    public boolean isPalindrome(String s) {
+        String normalized = normalizeString(s);
+        return isPalindromeHelper(normalized);
+    }
+
+    private String normalizeString(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+        return sb.toString();
+    }
+
+    private boolean isPalindromeHelper(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        R192210513 checker = new R192210513();  // Corrected class name
+        String s = "A man, a plan, a canal: Panama";
+        System.out.println("Is the string a palindrome? " + checker.isPalindrome(s)); // Output: true
+    }
+}
