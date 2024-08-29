@@ -1,0 +1,36 @@
+public class R192210513 {
+    private char[] buf4 = new char[4];
+    private int buf4Pointer = 0;
+    private int buf4Count = 0;
+
+    public int read4(char[] buf4) {
+        return 0;
+    }
+
+    public int read(char[] buf, int n) {
+        int totalRead = 0;
+        while (totalRead < n) {
+            if (buf4Pointer == buf4Count) {
+                buf4Count = read4(buf4);
+                buf4Pointer = 0;
+                if (buf4Count == 0) {
+                    break;
+                }
+            }
+            while (totalRead < n && buf4Pointer < buf4Count) {
+                buf[totalRead++] = buf4[buf4Pointer++];
+            }
+        }
+        return totalRead;
+    }
+
+    public static void main(String[] args) {
+        R192210513 reader = new R192210513();
+        char[] buf = new char[10];
+        int n = 7;
+
+        int charsRead = reader.read(buf, n);
+        System.out.println("Characters read: " + charsRead);
+        System.out.println("Buffer content: " + new String(buf, 0, charsRead));
+    }
+}
