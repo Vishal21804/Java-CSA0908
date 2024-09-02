@@ -8,8 +8,8 @@ public class UserCountCalculator {
         System.out.print("Staff Users: ");
         int staffUsers = input.nextInt();
         int nonTeachingStaffUsers = staffUsers / 3;
-        int teachingStaffUsers = staffUsers - nonTeachingStaffUsers;
-        int studentUsers = totalUsers - staffUsers;
+        int totalStaffUsers = staffUsers + nonTeachingStaffUsers;
+        int studentUsers = totalUsers - totalstaffUsers;
         System.out.println("Student Users: " + studentUsers);
     }
 }
