@@ -1,0 +1,9 @@
+public class dec{
+  public static void main(String[] args){
+    int n=15;
+    int bin=Integer.toBinaryString(n);
+    int oct=Integer.toOctalString(n);
+    System.out.println(bin);
+    System.out.println(oct);
+  }
+}
