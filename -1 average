@@ -1,0 +1,28 @@
+import java.util.*;
+public class Multi{
+  public static void main(String[] args){
+    Scanner scanner=new Scanner(System.in);
+    int i=0,j=0;
+    int s1=0,s2=0;
+    int n=0;
+    while(n!=-1){
+      n=scanner.nextInt();
+      if(n==-1)
+        break;
+        if(n>0){
+          i++;
+          s1=s1+n;
+          
+        }else{
+          j++;
+          s2=s2+n;
+        }
+    }
+    double post=s1/i;
+    double neg=s2/j;
+    System.out.println(i);
+    System.out.println(j);
+    System.out.println(post);
+    System.out.println(neg);
+  }
+}
