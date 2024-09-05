@@ -1,0 +1,11 @@
+public class domination{
+  public static void main(String[] args){
+    int d[]={500,100,200,2000};
+    int n[]={4,20,32,1};
+    int total=0;
+    for(int i=0;i<d.length;i++){
+      total+=d[i]*n[i];
+    }
+    System.out.print(total);
+  }
+}
