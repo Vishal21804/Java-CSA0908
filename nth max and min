@@ -1,0 +1,18 @@
+import java.util.Arrays;
+public class mthnth{
+  public static void main(String[] args){
+    int arr[]={14,16,87,36,25,89,34};
+    int n=3;
+    int m=1;
+    Arrays.sort(arr);
+    int mth=arr[arr.length-m];
+    int nth=arr[n-1];
+    int sum=mth+nth;
+    int diff=mth-nth;
+    System.out.println(mth);
+    System.out.println(nth);
+    System.out.println(sum);
+    System.out.println(diff);
+    
+  }
+}
