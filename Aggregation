@@ -1,0 +1,24 @@
+public class Aggregation {
+    public static void main(String[] args) {
+      int a1=90;
+      int a2=91;
+      int a3=92;
+      int a4=93;
+      int total=a1+a2+a3+a4;
+      System.out.println(total);
+      double aggr=total/4f;
+      System.out.println(aggr);
+      if(aggr>75){
+        System.out.println("Distinction");
+      }else if(aggr<=75 && aggr>=60){
+        System.out.println("First Division");
+      }else if(aggr<60 && aggr>=50){
+        System.out.println("Second Division");
+      }else if(aggr<50 && aggr>=40){
+        System.out.println("Third Division");
+      }else{
+        System.out.println("Fail");
+      }
+      
+  }
+}
