@@ -1,0 +1,20 @@
+public class upperlowercase{
+  public static void main(String[] args){
+    char input[]={'W','d','A','G','g','H','*'};
+    int upper=0,lower=0,digit=0;
+    for(char c:input){
+      if(c=='*'){
+        break;
+      }else if(c>='A' && c<='Z'){
+        upper++;
+      }else if(c>='a'&&c<='z'){
+        lower++;
+      }else if(c>='0' && c<='9'){
+        digit++;
+      }
+    }
+    System.out.println("Uppercase:"+upper);
+    System.out.println("Lowercase:"+lower);
+    System.out.println("Digits:"+digit);
+  }
+}
